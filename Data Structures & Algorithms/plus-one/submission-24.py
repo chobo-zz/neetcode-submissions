@@ -1,0 +1,17 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        digits.reverse()
+        carry = 1
+
+        for i in range(len(digits)):
+            if digits[i] == 9:
+                digits[i] = 0
+                if i == len(digits) - 1:
+                    digits.append(carry)
+                    break
+            else:
+                digits[i] += 1
+                break
+        
+        digits.reverse()
+        return digits
